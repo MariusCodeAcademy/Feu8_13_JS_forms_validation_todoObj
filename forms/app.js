@@ -48,6 +48,8 @@ function showError(msg) {
   // irasyti zinute i klaidu konteineri
   els.errorContainer.innerHTML = `<h2 class="error">${msg}</h2>`;
 }
+/// sukurti isTextShort()
+// patikrinti ar vardas arba pavarde arba mistas yra trumpensi nei 3 raides
 
 function isThereEmptyValues(valuesObj) {
   // patikrinti ar nors viena obejkto reikme lygi tusciam string

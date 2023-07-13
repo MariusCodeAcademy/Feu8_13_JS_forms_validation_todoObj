@@ -1,23 +1,10 @@
 # Formos
 
-## susikuriam person.html ir person.js
+1.  sukurti isTextShort() patikrinti ar vardas arba pavarde arba mistas yra trumpensi nei 3 raides
+2.  jei sekmingai supildem forma, paselepti forma display none
+3.  kai forma paslepta, rodyti mygtuka kuri atgal ijungu forma
+4.  pakeisti town i selecta
 
-1. sukurti htmle forma su inputais, firstname, lastname, age, isMarried, town
-2. pateikiant forma surinkti visu inputu informacija i nauja objekta.
-3. sukurti funkcija kuri naujai gauta objekta paverstu html ir patalpintu.
-   kazkas panasaus:
+    4.1 -extra- select opcijas sugeneruoti is masyvo
 
-```html
-<div class="oneUser">
-  <h3>Email: james@bond.com</h3>
-  <p>Name: James</p>
-  <p>Age: 45 years old</p>
-</div>
-```
-
-4. kiekvienas jaujai pridetas asmuo atsiranda htmle kaip papildomas elemetas
-5. sukurti patikrinima kad neleisti pateikti formos su tusciais ivesties laukais.
-6. sukurti patikrinima kad vardas nebutu trumpesnis nei 3 raides.
-7. isMarried inputa pakeisti i checkbox
-8. town inputa pakeisti i selecta su 3 miestais.
-9. practice direktorijoje kita uzduotis
+5.  pabandyti perdaryt visa sita pratima patiems nuo nulio javascirpt

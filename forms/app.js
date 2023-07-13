@@ -25,9 +25,23 @@ els.form.addEventListener('submit', (event) => {
     isMarried: els.isMarried.checked,
     town: els.town.value,
   };
+
   console.log('formInputsDataObj ===', formInputsDataObj);
+  // Validacija
+  if (isThereEmptyValues(formInputsDataObj)) {
+    console.warn('all fields required');
+    return;
+  }
+
   makeElAndMountToDom(formInputsDataObj);
 });
+
+function isThereEmptyValues(valuesObj) {
+  // patikrinti ar nors viena obejkto reikme lygi tusciam string
+  if (valuesObj.firstname === '') {
+    return true;
+  }
+}
 
 /*
 <div class="oneUser">

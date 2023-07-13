@@ -38,9 +38,21 @@ els.form.addEventListener('submit', (event) => {
 
 function isThereEmptyValues(valuesObj) {
   // patikrinti ar nors viena obejkto reikme lygi tusciam string
-  if (valuesObj.firstname === '') {
+
+  // let firstname = valuesObj.firstname;
+  // let lastname = valuesObj.lastname;
+  // let age = valuesObj.age;
+  // let town = valuesObj.town;
+
+  // objekto destrukturizacija
+  let { firstname, lastname, age, town } = valuesObj;
+
+  if (firstname === '' || lastname === '' || age === '' || town === '') {
     return true;
   }
+  // if ([firstname, lastname, age, town].includes('')) {
+  //   return true;
+  // }
 }
 
 /*

@@ -4,6 +4,7 @@ console.log('app.js file was loaded');
 const els = {
   form: document.forms.perosnForm,
   output: document.getElementById('output'),
+  errorContainer: document.getElementById('errorContainer'),
   firstname: document.getElementById('firstname'),
   lastname: document.getElementById('lastname'),
   age: document.getElementById('age'),
@@ -16,6 +17,7 @@ els.form.addEventListener('submit', (event) => {
   // sustabdom nuo perkrovimo?
   event.preventDefault();
   console.log('pateikta forma');
+  clearErrors();
 
   // formos ivestties reiksmiu objektas
   const formInputsDataObj = {
@@ -30,11 +32,22 @@ els.form.addEventListener('submit', (event) => {
   // Validacija
   if (isThereEmptyValues(formInputsDataObj)) {
     console.warn('all fields required');
+    showError('Visi laukai privalomi!!!');
     return;
   }
 
   makeElAndMountToDom(formInputsDataObj);
+  els.form.reset();
 });
+
+function clearErrors() {
+  els.errorContainer.innerHTML = '';
+}
+
+function showError(msg) {
+  // irasyti zinute i klaidu konteineri
+  els.errorContainer.innerHTML = `<h2 class="error">${msg}</h2>`;
+}
 
 function isThereEmptyValues(valuesObj) {
   // patikrinti ar nors viena obejkto reikme lygi tusciam string
@@ -53,6 +66,10 @@ function isThereEmptyValues(valuesObj) {
   // if ([firstname, lastname, age, town].includes('')) {
   //   return true;
   // }
+  // if (Object.values(valuesObj).includes('')) {
+  //   return true;
+  // }
+  // return Object.values(valuesObj).includes('')
 }
 
 /*

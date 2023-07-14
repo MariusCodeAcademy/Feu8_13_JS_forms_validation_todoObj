@@ -46,10 +46,11 @@ els.form.addEventListener('submit', (event) => {
   makeElAndMountToDom(formInputsDataObj);
   // paslepti forma
   els.form.reset();
-  hideFormShowBtn();
+  // hideFormShowBtn();
+  toggleFormAndBtn();
 });
 
-els.addUserBtn.addEventListener('click', showFormHideBtn);
+els.addUserBtn.addEventListener('click', toggleFormAndBtn);
 
 function clearErrors() {
   els.errorContainer.innerHTML = '';
@@ -116,3 +117,23 @@ function showFormHideBtn() {
   els.form.classList.remove('d-none');
   els.addUserBtn.classList.add('d-none');
 }
+
+function toggleFormAndBtn() {
+  els.form.classList.toggle('d-none');
+  els.addUserBtn.classList.toggle('d-none');
+}
+
+function initSelectOpt() {
+  const townsArr = ['Vilnius', 'Kaunas', 'Klaipeda', 'London', 'Bahamas'];
+  // sukti cikla per townsArr
+  townsArr.forEach((townName) => {
+    // sukurti option taga
+    const optEl = document.createElement('option');
+    // ideti miesto pav i value ir textContenta
+    optEl.value = townName;
+    optEl.textContent = townName;
+    // ideti ta taga i selecta
+    els.town.append(optEl);
+  });
+}
+initSelectOpt();

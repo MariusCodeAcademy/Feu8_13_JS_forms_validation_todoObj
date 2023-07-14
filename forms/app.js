@@ -125,6 +125,13 @@ function toggleFormAndBtn() {
 
 function initSelectOpt() {
   const townsArr = ['Vilnius', 'Kaunas', 'Klaipeda', 'London', 'Bahamas'];
+  const townsArrObj = [
+    { value: 'vilnius', label: 'Vilnius' },
+    { value: 'kaunas', label: 'Kaunas' },
+    { value: 'klaipeda', label: 'Klaipeda' },
+    { value: 'london', label: 'London' },
+    { value: 'bahamas', label: 'Bahamas' },
+  ];
   // sukti cikla per townsArr
   townsArr.forEach((townName) => {
     // sukurti option taga

@@ -1,9 +1,11 @@
 'use strict';
 console.log('app.js file was loaded');
+// visi elementai su kuriais mes kazka darysim
 
 const els = {
   form: document.forms.perosnForm,
   output: document.getElementById('output'),
+  addUserBtn: document.getElementById('addUserBtn'),
   errorContainer: document.getElementById('errorContainer'),
   firstname: document.getElementById('firstname'),
   lastname: document.getElementById('lastname'),
@@ -36,9 +38,18 @@ els.form.addEventListener('submit', (event) => {
     return;
   }
 
+  // patikrinti ivesiestie ilgius kad butu daugiau nei 3
+
+  // patikrinti ar armziu tarp 10 ir 150mettu
+
+  // nera klaidu
   makeElAndMountToDom(formInputsDataObj);
+  // paslepti forma
   els.form.reset();
+  hideFormShowBtn();
 });
+
+els.addUserBtn.addEventListener('click', showFormHideBtn);
 
 function clearErrors() {
   els.errorContainer.innerHTML = '';
@@ -95,4 +106,13 @@ function makeElAndMountToDom(valuesObj) {
   <p>Age: ${valuesObj.age} years old</p>
   `;
   els.output.append(divEl);
+}
+
+function hideFormShowBtn() {
+  els.form.classList.add('d-none');
+  els.addUserBtn.classList.remove('d-none');
+}
+function showFormHideBtn() {
+  els.form.classList.remove('d-none');
+  els.addUserBtn.classList.add('d-none');
 }
